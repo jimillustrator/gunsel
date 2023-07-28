@@ -120,7 +120,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215578589016642}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: aab1e1e97d4254df082b3c4fc9d8d700, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 4
   SprintSpeed: 6
-  RotationSpeed: 1
+  RotationSpeed: 2
   SpeedChangeRate: 10
   JumpHeight: 1.2
   Gravity: -15
