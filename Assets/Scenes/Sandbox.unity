@@ -622,6 +622,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 765387510}
+    - target: {fileID: 324953502578909652, guid: 9c2d3ef3b3be942548a7154e801e8ce7, type: 3}
+      propertyPath: chaseRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 324953502578909655, guid: 9c2d3ef3b3be942548a7154e801e8ce7, type: 3}
       propertyPath: m_RootOrder
       value: 3
