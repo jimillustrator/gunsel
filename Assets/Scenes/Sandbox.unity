@@ -355,6 +355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2624794694231477522, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: RotationSpeed
       value: 4
@@ -433,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 765387513}
   range: 100
+  damage: 30
 --- !u!20 &765387513 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2624794694231477525, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
