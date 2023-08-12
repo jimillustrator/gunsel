@@ -18,7 +18,15 @@ public class Weapon : MonoBehaviour
     private void Shoot()
     {
         RaycastHit hit;
-        Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range);
-        Debug.Log("I hit this thing: " + hit.transform.name);
+        if(Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
+        {
+            Debug.Log("I hit this thing: " + hit.transform.name);
+            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+        }
+        else
+        {
+            return;
+        }
+        
     }
 }
