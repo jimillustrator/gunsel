@@ -9,11 +9,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage = 30f;
     [SerializeField] ParticleSystem muzzleFlash;
 
+
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
             Shoot();
+
         }
     }
 
