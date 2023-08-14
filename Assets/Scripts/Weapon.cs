@@ -25,6 +25,7 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
+        RotateMuzzleFlash();
         StartCoroutine(ShowMuzzleFlash());
         ProcessRaycast();
     }
@@ -50,5 +51,11 @@ public class Weapon : MonoBehaviour
         muzzleFlash2D.GetComponent<MeshRenderer>().enabled = true;
         yield return new WaitForSecondsRealtime(0.03f);
         muzzleFlash2D.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    private void RotateMuzzleFlash()
+    {
+        float muzzleRotation = Random.Range(0, 90);
+        muzzleFlash2D.transform.Rotate(0.0f, muzzleRotation, 0.0f, Space.Self);
     }
 }
