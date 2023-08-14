@@ -356,6 +356,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 765387512, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 3601566782942616949, guid: 990d12df3a18f402480b1fdc554f68e2, type: 3}
+    - target: {fileID: 765387512, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: muzzleFlash2D
       value: 
       objectReference: {fileID: 2003201686}
