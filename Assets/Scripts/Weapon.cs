@@ -7,7 +7,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
-    [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] GameObject muzzleFlash2D;
+
+    private void Start()
+    {
+        muzzleFlash2D.GetComponent<MeshRenderer>().enabled = false;
+    }
 
 
     void Update()
@@ -15,20 +20,13 @@ public class Weapon : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             Shoot();
-
         }
     }
 
     private void Shoot()
     {
-        PlayMuzzleFlash();
+        StartCoroutine(ShowMuzzleFlash());
         ProcessRaycast();
-
-    }
-
-    private void PlayMuzzleFlash()
-    {
-        muzzleFlash.Play();
     }
 
     private void ProcessRaycast()
@@ -45,5 +43,12 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+    }
+
+    private IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash2D.GetComponent<MeshRenderer>().enabled = true;
+        yield return new WaitForSecondsRealtime(0.03f);
+        muzzleFlash2D.GetComponent<MeshRenderer>().enabled = false;
     }
 }

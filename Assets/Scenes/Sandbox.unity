@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 668b592b592a04d91b7cf4bd1b9742b7, type: 2}
+--- !u!1 &19640861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5883294635518039385, guid: bbc150491aef64ed28c4c5a211cb8079, type: 3}
+  m_PrefabInstance: {fileID: 118470937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &118470937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +429,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 765387512, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: muzzleFlash2D
+      value: 
+      objectReference: {fileID: 19640861}
     - target: {fileID: 5569422658735627466, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16
@@ -516,23 +525,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8306176559088598803, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 765387509}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &765387512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8651035819300529577, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-  m_PrefabInstance: {fileID: 765387509}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &765387513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765387512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbaa95da596f342baadb9b30213ea2ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &857603212
 GameObject:
   m_ObjectHideFlags: 0
