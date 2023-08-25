@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage = 30f;
     [SerializeField] GameObject muzzleFlash2D;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] int bulletAmount = 6;
 
     private void Start()
     {
@@ -26,9 +27,13 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        RotateMuzzleFlash();
-        StartCoroutine(ShowMuzzleFlash());
-        ProcessRaycast();
+        if (bulletAmount > 0)
+        {
+            RotateMuzzleFlash();
+            StartCoroutine(ShowMuzzleFlash());
+            ProcessRaycast();
+            bulletAmount = bulletAmount - 1;
+        }
     }
 
     private void ProcessRaycast()
