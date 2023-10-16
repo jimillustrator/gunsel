@@ -8,7 +8,7 @@ public class WeaponZoom : MonoBehaviour
 {
 
     [SerializeField] CinemachineVirtualCamera camera;
-    [SerializeField] float defaultFOV = 40;
+    [SerializeField] float defaultFOV = 60;
     [SerializeField] float zoomedInFOV = 15;
     [SerializeField] float zoomedOutSensitivity = 4f;
     [SerializeField] float zoomedInSensitivity = 2f;
