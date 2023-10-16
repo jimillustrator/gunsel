@@ -10,6 +10,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject muzzleFlash2D;
     [SerializeField] GameObject hitEffect;
     [SerializeField] int bulletAmount = 6;
+    [SerializeField] float timeBetweenShots = 0.5f;
+
+    bool canShoot = true;
 
     private void Start()
     {
@@ -19,14 +22,15 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetMouseButtonDown(0) && canShoot == true)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
+        canShoot = false;
         if (bulletAmount > 0)
         {
             RotateMuzzleFlash();
@@ -34,6 +38,8 @@ public class Weapon : MonoBehaviour
             ProcessRaycast();
             bulletAmount = bulletAmount - 1;
         }
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
 
     private void ProcessRaycast()
