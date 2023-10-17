@@ -69,6 +69,7 @@ public class AnimatedWeapon : MonoBehaviour
 
     private IEnumerator ShowMuzzleFlash()
     {
+        yield return new WaitForSecondsRealtime(0.23f);
         muzzleFlash2D.GetComponent<MeshRenderer>().enabled = true;
         yield return new WaitForSecondsRealtime(0.03f);
         muzzleFlash2D.GetComponent<MeshRenderer>().enabled = false;
