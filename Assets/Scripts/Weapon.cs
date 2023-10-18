@@ -14,33 +14,38 @@ public class Weapon : MonoBehaviour
 
     bool canShoot = true;
 
-    private void Start()
+    private void OnEnable()
     {
-        muzzleFlash2D.GetComponent<MeshRenderer>().enabled = false;
-    }
-
-
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0) && canShoot == true)
-        {
-            StartCoroutine(Shoot());
-        }
-    }
-
-    IEnumerator Shoot()
-    {
-        canShoot = false;
-        if (ammoSlot.GetCurrentAmmo() > 0)
-        {
-            RotateMuzzleFlash();
-            StartCoroutine(ShowMuzzleFlash());
-            ProcessRaycast();
-            ammoSlot.ReduceCurrentAmmo();
-        }
-        yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
     }
+
+    //private void Start()
+    //{
+    //    muzzleFlash2D.GetComponent<MeshRenderer>().enabled = false;
+    //}
+
+
+    //void Update()
+    //{
+    //    if(Input.GetMouseButtonDown(0) && canShoot == true)
+    //    {
+    //        StartCoroutine(Shoot());
+    //    }
+    //}
+
+    //IEnumerator Shoot()
+    //{
+    //    canShoot = false;
+    //    if (ammoSlot.GetCurrentAmmo() > 0)
+    //    {
+    //        RotateMuzzleFlash();
+    //        StartCoroutine(ShowMuzzleFlash());
+    //        ProcessRaycast();
+    //        ammoSlot.ReduceCurrentAmmo();
+    //    }
+    //    yield return new WaitForSeconds(timeBetweenShots);
+    //    canShoot = true;
+    //}
 
     private void ProcessRaycast()
     {

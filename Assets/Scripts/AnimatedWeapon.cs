@@ -16,6 +16,11 @@ public class AnimatedWeapon : MonoBehaviour
 
     bool canShoot = true;
 
+    private void OnEnable()
+    {
+        canShoot = true;
+    }
+
     private void Start()
     {
         muzzleFlash2D.GetComponent<MeshRenderer>().enabled = false;
@@ -23,27 +28,27 @@ public class AnimatedWeapon : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && canShoot == true)
-        {
-            myAnimator.SetTrigger("active");
-            Shoot();
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0) && canShoot == true)
+    //    {
+    //        myAnimator.SetTrigger("active");
+    //        Shoot();
+    //    }
+    //}
 
-    void Shoot()
-    {
-        canShoot = false;
-        if (ammoSlot.GetCurrentAmmo() > 0)
-        {
-            RotateMuzzleFlash();
-            StartCoroutine(ShowMuzzleFlash());
-            ProcessRaycast();
-            ammoSlot.ReduceCurrentAmmo();
-        }
-        canShoot = true;
-    }
+    //void Shoot()
+    //{
+    //    canShoot = false;
+    //    if (ammoSlot.GetCurrentAmmo() > 0)
+    //    {
+    //        RotateMuzzleFlash();
+    //        StartCoroutine(ShowMuzzleFlash());
+    //        ProcessRaycast();
+    //        ammoSlot.ReduceCurrentAmmo();
+    //    }
+    //    canShoot = true;
+    //}
 
     void ProcessRaycast()
     {

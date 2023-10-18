@@ -52,7 +52,7 @@ public class WeaponSwitcher : MonoBehaviour
         //Mouse ScrollWheel is a string reference that we got from the Edit>
         //Project Settings>Input Manager>Mouse ScrollWheel in Unity iself
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        if(Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             //the "-1" is to convert it to index number
             //thetransform is the trasform of the weapons empty, since this script is on that
@@ -66,7 +66,7 @@ public class WeaponSwitcher : MonoBehaviour
             }
         }
 
-        if(Input.GetAxis("Mouse ScrollWheel") < 0)
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             if(currentWeapon <= 0)
             {

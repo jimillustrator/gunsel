@@ -607,6 +607,18 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1845691937}
+    - target: {fileID: 6575199811186039650, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575199811186039650, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575199811186039650, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: Player

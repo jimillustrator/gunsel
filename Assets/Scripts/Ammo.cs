@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    [SerializeField] int ammoAmount = 10;
+    //this creates an array for the ammo slots
+    [SerializeField] AmmoSlot[] ammoSlots;
 
-    public int GetCurrentAmmo()
+    //this is a new class that's only visible to the Ammo class (which is, itself, public)
+    //the public variables that are created in it can only be used by the Ammo class
+    //the System.Serializable essentially makes the entire class like a SerializeField,
+    //so it can appear in the Inspector
+
+    [System.Serializable]
+    private class AmmoSlot
     {
-        return ammoAmount;
+        public AmmoType ammoType;
+        public int ammoAmount;
     }
 
-    public void ReduceCurrentAmmo()
-    {
-        ammoAmount--;
-    }
+    //public int GetCurrentAmmo()
+    //{
+    //    return ammoAmount;
+    //}
+
+    //public void ReduceCurrentAmmo()
+    //{
+    //    ammoAmount--;
+    //}
 }
