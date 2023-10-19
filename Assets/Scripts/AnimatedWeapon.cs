@@ -10,6 +10,7 @@ public class AnimatedWeapon : MonoBehaviour
     [SerializeField] GameObject muzzleFlash2D;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
 
     Animator myAnimator;
@@ -28,27 +29,27 @@ public class AnimatedWeapon : MonoBehaviour
     }
 
 
-    //void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0) && canShoot == true)
-    //    {
-    //        myAnimator.SetTrigger("active");
-    //        Shoot();
-    //    }
-    //}
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && canShoot == true)
+        {
+            myAnimator.SetTrigger("active");
+            Shoot();
+        }
+    }
 
-    //void Shoot()
-    //{
-    //    canShoot = false;
-    //    if (ammoSlot.GetCurrentAmmo() > 0)
-    //    {
-    //        RotateMuzzleFlash();
-    //        StartCoroutine(ShowMuzzleFlash());
-    //        ProcessRaycast();
-    //        ammoSlot.ReduceCurrentAmmo();
-    //    }
-    //    canShoot = true;
-    //}
+    void Shoot()
+    {
+        canShoot = false;
+        if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
+        {
+            RotateMuzzleFlash();
+            StartCoroutine(ShowMuzzleFlash());
+            ProcessRaycast();
+            ammoSlot.ReduceCurrentAmmo(ammoType);
+        }
+        canShoot = true;
+    }
 
     void ProcessRaycast()
     {
