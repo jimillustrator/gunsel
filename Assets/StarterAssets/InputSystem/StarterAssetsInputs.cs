@@ -44,17 +44,10 @@ namespace StarterAssets
 			SprintInput(value.isPressed);
 		}
 
-		public void OnZoom(InputValue value)
-		{
-			ZoomInput(value.isPressed);
-		}
+		
 #endif
 
-		private void ZoomInput(bool valueIsPressed)
-		{
-			WeaponZoom weaponZoom = GetComponent<WeaponZoom>();
-			weaponZoom.Zoom(valueIsPressed);
-		}
+		
 
 
 
