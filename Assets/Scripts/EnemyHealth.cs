@@ -12,7 +12,13 @@ public class EnemyHealth : MonoBehaviour
         hitPoints -= damage;
         if (hitPoints <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(DelayDestroy());
         }
+    }
+
+    public IEnumerator DelayDestroy()
+    {
+        yield return new WaitForSecondsRealtime(0.3f);
+        Destroy(gameObject);
     }
 }

@@ -52,7 +52,8 @@ public class TommyGun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
-            CreateHitImpact(hit);
+            //CreateHitImpact(hit);
+            StartCoroutine(CreateHitImpact(hit));
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) return;
             target.TakeDamage(damage);
@@ -63,9 +64,16 @@ public class TommyGun : MonoBehaviour
         }
     }
 
-    private void CreateHitImpact(RaycastHit hit)
+    private IEnumerator CreateHitImpact(RaycastHit hit)
     {
+        yield return new WaitForSecondsRealtime(0.3f);
         GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impact, .1f);
     }
+
+    //private void CreateHitImpact(RaycastHit hit)
+    //{
+    //    GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+    //    Destroy(impact, .1f);
+    //}
 }
