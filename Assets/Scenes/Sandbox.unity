@@ -535,10 +535,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 765387510}
-    - target: {fileID: 502627814, guid: 8864b8e54b8784d359309c17d17431af, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 502627816, guid: 8864b8e54b8784d359309c17d17431af, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 07dcf09c9852c4052baf15412778a85e, type: 2}
     - target: {fileID: 1258824797656971228, guid: 8864b8e54b8784d359309c17d17431af, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -587,10 +587,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6619225837662441379, guid: 8864b8e54b8784d359309c17d17431af, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 765387510}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8864b8e54b8784d359309c17d17431af, type: 3}
 --- !u!1 &519148494
