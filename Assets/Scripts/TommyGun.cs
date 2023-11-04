@@ -10,7 +10,7 @@ public class TommyGun : MonoBehaviour
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
-    [SerializeField] float timeBetweenShots = 0.5f;
+    //[SerializeField] float timeBetweenShots = 0.5f;
 
     Animator myAnimator;
 
