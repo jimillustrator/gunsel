@@ -6,19 +6,31 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
 
+    bool isDead = false;
+
+    //Getter method 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void TakeDamage(float damage)
     {
         BroadcastMessage("OnDamageTaken");
         hitPoints -= damage;
         if (hitPoints <= 0)
         {
-            StartCoroutine(DelayDestroy());
+            Die();
         }
     }
 
-    public IEnumerator DelayDestroy()
+    private void Die()
     {
-        yield return new WaitForSecondsRealtime(0.3f);
-        Destroy(gameObject);
+        if(isDead)
+        {
+            return;
+        }
+        isDead = true;
+        GetComponent<Animator>().SetTrigger("death");
     }
 }

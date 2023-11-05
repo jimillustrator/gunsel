@@ -19,7 +19,6 @@ public class EnemyAttack : MonoBehaviour
         if (target == null) return;
         //target already has TakeDamage component because it was initialized in Start()
         target.TakeDamage(damage);
-        Debug.Log("bang bang");
     }
 
 }
