@@ -10,7 +10,7 @@ public class AnimatedWeapon : MonoBehaviour
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
-    //[SerializeField] float timeBetweenShots = 0.5f;
+    [SerializeField] float timeBetweenShots = 0.5f;
 
     Animator myAnimator;
 
@@ -32,20 +32,21 @@ public class AnimatedWeapon : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
-            myAnimator.SetTrigger("active");
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    void Shoot()
+    private IEnumerator Shoot()
     {
         canShoot = false;
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             RotateMuzzleFlash();
+            myAnimator.SetTrigger("active");
             StartCoroutine(ShowMuzzleFlash());
             ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo(ammoType);
+            yield return new WaitForSeconds(timeBetweenShots);
         }
         canShoot = true;
     }
