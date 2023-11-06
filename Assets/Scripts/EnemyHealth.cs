@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
-    [SerializeField] float deathPause = 0.5f;
+    [SerializeField] float deathPause = 0.3f;
 
     bool isDead = false;
 
