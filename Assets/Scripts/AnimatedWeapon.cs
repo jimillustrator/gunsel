@@ -46,8 +46,9 @@ public class AnimatedWeapon : MonoBehaviour
             StartCoroutine(ShowMuzzleFlash());
             ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo(ammoType);
-            yield return new WaitForSeconds(timeBetweenShots);
         }
+
+        yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
     }
 
